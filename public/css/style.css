@@ -1,0 +1,120 @@
+body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    }
+
+.search-h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+.search-box {
+      display: flex;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      max-width: 90%;
+    }
+
+.search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 15px;
+      font-size: 1rem;
+    }
+
+.search-button {
+      background: #8e2de2;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      color: white;
+      border: none;
+      padding: 0 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+.search-button:hover {
+      opacity: 0.9;
+    }
+
+
+/* Card Layout */
+.card {
+  background: rgba(255, 255, 255, 0.50); /* semi-transparent */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  backdrop-filter: blur(6px); /* glass effect */
+}
+
+/* Location */
+.location h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.location p {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Current Weather */
+.current p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Hourly Forecast */
+.hourly {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.hour {
+  flex: 0 0 auto;
+  margin: 0 12px;
+  text-align: center;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hour .icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+/* Buttons / Links */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.9;
+}

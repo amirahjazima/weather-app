@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <% if (error) { %>
+    <div class="card">
+      <h2><%= error %></h2>
+    </div>
+  <% } else { %>
+    <!-- Location Block -->
+    <div class="card location">
+      <h2><%= location %></h2>
+      <p>Latitude: <%= current.latitude %> | Longitude: <%= current.longitude %></p>
+    </div>
+
+    <!-- Current Weather Block -->
+    <div class="card current">
+      <p>Temperature: <%= current.temperature %>°C</p>
+      <p>Wind Speed: <%= current.windspeed %> km/h</p>
+      <p>Wind Direction: <%= current.winddirection %>°</p>
+    </div>
+
+    <!-- Hourly Forecast Block -->
+    <div class="card">
+      <div class="hourly">
+        <% 
+          function getWeatherIcon(code) {
+            if (code === 0) return "☀️"; // Clear
+            if (code >= 1 && code <= 3) return "🌤️"; // Partly cloudy
+            if (code >= 45 && code <= 48) return "🌫️"; // Fog
+            if (code >= 51 && code <= 57) return "🌦️"; // Drizzle
+            if (code >= 61 && code <= 67) return "🌧️"; // Rain
+            if (code >= 71 && code <= 77) return "❄️"; // Snow
+            if (code >= 80 && code <= 82) return "🌦️"; // Rain showers
+            if (code >= 85 && code <= 86) return "🌨️"; // Snow showers
+            if (code >= 95 && code <= 99) return "⛈️"; // Thunderstorm
+            return "❓";
+          }
+        %>
+
+        <% for (let i = 0; i < 12; i++) { 
+             let date = new Date(hourly.time[i]);
+             let timeString = date.toLocaleTimeString("en-US", {
+               hour: "2-digit",
+               minute: "2-digit",
+               second: "2-digit",
+               hour12: true
+             });
+        %>
+          <div class="hour">
+            <p class="icon"><%= getWeatherIcon(hourly.weathercode[i]) %></p>
+            <p><%= timeString %></p>
+            <p><%= hourly.temperature_2m[i] %>°C</p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <a href="/">Search Again</a>
+</body>
+</html>
