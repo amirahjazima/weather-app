@@ -17,4 +17,5 @@ It fetches real-time weather data using OpenCage (geocoding) and Open-Meteo (wea
 ## Setup
 1. Clone the repo
 2. Run `npm install`
-3. Add `.env` file with your API keys:
+3. Add `.env` file with your API keys: OPENCAGE_API_KEY=your_api_key
+4. Start the server: `npm start`
