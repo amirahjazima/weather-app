@@ -3,6 +3,9 @@
 A simple weather app built with Node.js, Express, and EJS.  
 It fetches real-time weather data using OpenCage (geocoding) and Open-Meteo (weather forecast).
 
+## 🌐 Live Demo
+👉 [View the live app here](https://weather-app-mkft.onrender.com)
+
 ## Features
 - Search any city for weather
 - Shows current conditions and hourly forecast
